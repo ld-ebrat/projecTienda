@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/gestion.css">
+</head>
+
+<body>
+    <section id="cud-producto">
+        <div class="home">
+            <img src="../img/menor-que-24.png" alt="">
+            <button>Home</button>
+        </div>
+        <h2>Productos</h2>
+        <div class="detalles-producto">
+            <div class="action-producto">
+                <label for="">Accion a realizar</label>
+                <select id="action">
+                    <option value="selection" selected>Select option</option>
+                    <option value="add">Agregar</option>
+                    <option value="update">Actualizar</option>
+                    <option value="delete">Eliminar</option>
+                </select>
+            </div>
+            <div class="info-general">
+                <div class="info-general2 info-g">
+                    <label for="">Nombre</label>
+                    <input type="text" id="name" placeholder="Nombre">
+                    <label for="">Precio</label>
+                    <input type="text" id="price" placeholder="Precio">
+                </div>
+                <div class="info-general2 info-g">
+                    <label for="">Categoria</label>
+                    <select name="" id="select-caterogia">
+                        <option value="select-cate" selected>Seleccionar Categoria</option>
+                    </select>
+                    <label for="">Imagen del Producto</label>
+                    <input type="file" id="img-product">
+                    <div class="photo-producto"></div>
+                </div>
+            </div>
+            <div class="description">
+                <label for="">Descripcion</label>
+                <textarea name="" id="descripcion-product" cols="30" rows="10" placeholder="Descripcion"></textarea>
+            </div>
+            <div>
+                <button class="btn-add-pro">Agregar Producto</button>
+            </div>
+        </div>
+    </section>
+    <section class="section-categoria">
+        <h2>Categoria</h2>
+        <div class="action-categoria">
+            <label for="">Accion a realizar</label>
+            <select name="" id="">
+                <option value="add">Agregar Categoria</option>
+                <option value="update">Actualizar Categoria</option>
+                <option value="delete">Eliminar Categoria</option>
+            </select>
+        </div>
+        <div class="container-action">
+            <div class="agregar-categoria ">
+                <h3>Agregar Categoria</h3>
+                <label for="">Nombre Categoria</label>
+                <input type="text" id="name-categoria">
+                <label for="">Descripcion</label>
+                <textarea name="" id="descripcion-categoria" cols="30" rows="10" placeholder="Descripcion"></textarea>
+    
+                <button class="btn-add-categoria">Agregar Categoria</button>
+            </div>
+            <div class="editar-categoria">
+                <h3>Actalizar Categoria</h3>
+                <label for="">Categoria a Editar</label>
+                <select name="" id=""></select>
+                <label for="">Nombre Categoria</label>
+                <input type="text">
+                <label for="">Descripcion</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+    
+                <button class="btn-update-categoria">Actualizar Datos</button>
+            </div>
+            <div class="eliminar-categoia">
+                <h3>Eliminar Categoria</h3>
+                <label for="">Categoria a Eliminar</label>
+                <select name="" id=""></select>
+                <label for="">Descripcion</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+    
+                <button class="btn-update-categoria">Actualizar Datos</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/gestion.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+:root{
+    --color-prin: rgb(88, 88, 88);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+span{
+    color: black;
+}
+button:hover{
+    cursor: pointer;
+}
+
+main{
+    width: 100%;
+    padding: 20px 0px 0px 0px;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+
+/*############## Barra de navegacion 1 #############*/
+.div-opa{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 3;
+    opacity: 0.3;
+}
+#nav1{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 280px;
+    height: 100%;
+    left: -300px;
+    z-index: 3;
+    transition: left 1s;
+    overflow-y: scroll;
+}
+#nav1 .container1-nav1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 10px;
+}
+.container1-nav1 button{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container1-nav1 .log{
+    height: 90px;
+}
+.container1-nav1 .log img{
+    width: 60px;
+}
+.close{
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+}
+.close img{
+    width: 24px;
+}
+
+.sign{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 20px 0px;
+}
+
+.sign button{
+    width: 90px;
+    font-weight: 800;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+}
+
+.container2-nav1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px;
+}
+.container2-nav1 h4{
+    font-weight: 400;
+}
+.container2-cate{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+}
+
+
+#nav1 a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    padding: 0px 0px 0px 10px ;
+    border-left: 8px solid transparent;
+}
+#nav1 a span{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.63;
+}
+#nav1 a span img{
+    margin: 0px 30px 0px 0px;
+    width: 15px;
+}
+
+#nav1 a:hover{
+    border-left-color: black;
+}
+
+.close:active{
+    background-color: rgb(212, 38, 38);
+}
+/*############## Barra de navegacion 1 #############*/
+
+/*############## Barra de navegacion 2 #############*/
+#nav2{
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: black 0px 0px 6px 0px;
+    z-index: 2;
+}
+.container-nav2-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.btn-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    margin: 6px 0px 0px 10px ;
+}
+
+.log-char{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+}
+.log-char img{
+    width: 100px;
+}
+.container-nav2-2{
+    margin: 0px 20px 0px 0px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.container-nav2-2 button img{
+    width: 30px;
+}
+.container-nav2-2 button{
+    background-color: transparent;
+    border: none;
+}
+
+.signIn-nav2:hover{
+    cursor: pointer;
+}
+.signIn-nav2 span{
+    cursor: pointer;
+}
+
+.carrito{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container-nav2-2 button p{
+    background-color: white;
+    position: absolute;
+    width: 15px;
+    border: 2px solid var(--color-prin);
+    border-radius: 100%;
+    z-index: 1;
+    top: -5px;
+    left: 20px;
+}
+
+.user:hover{
+    cursor: pointer;
+}
+.user{
+    display: none;
+    margin: 0px 10px 0px 10px;
+}
+.user button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+}
+
+.user button img{
+    width: 40px;
+
+}
+
+
+/*############## Barra de navegacion 2 #############*/
+
+/*############## Barra de navegacion 3 #############*/
+
+#nav3{
+    width: 300px;
+    position: absolute;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: -300px;
+    gap: 10px;
+    padding: 20px 0px 20px 0px;
+    z-index: 3;
+    transition: right 1s;
+}
+#nav3 > div{
+    width: 100%;
+}
+
+#nav3 > div > *:not(.img-usuario-nav3):not(.close-w-user){
+    padding: 0px 40px;
+} 
+#nav3 hr{
+    width: 90%;
+    text-align: center;
+}
+.container-nav3{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container-nav3 button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.container-nav3 img{
+    width: 20px;
+}
+#nav3 button{
+    background-color: transparent;
+    border: none;
+    text-align: start;
+}
+
+.info-user{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.close-w-user{
+    display: flex;justify-content: flex-end;
+}
+.close-w-user img{
+    width: 24px;
+}
+
+.close-w-user:hover{
+    cursor: pointer;
+}
+.close-w-user:active span{
+    background-color: rgb(212, 38, 38);
+}
+
+.img-usuario-nav3 img{
+    width: 40px;
+}
+.img-usuario-nav3{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0;
+}
+/*############## Barra de navegacion 3 #############*/

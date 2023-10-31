@@ -1,0 +1,151 @@
+
+
+#cud-producto{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+}
+
+.detalles-producto{
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-general{
+    display: flex;
+    justify-content: space-around;
+}
+
+.info-general label{
+    margin: 15px 0px 0px 0px;
+}
+
+.info-g{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.photo-producto{
+    border: 1px dashed;
+    margin: 15px 0px 0px 0px;
+    width: 100px;
+    height: 100px;
+}
+
+/* ################## Detalles Adicionales ################*/
+.detalles-adicionales{
+    display: none;
+}
+
+.catainer-categoria{
+    display: none;
+}
+
+.pc-info-g label{
+    display: block;
+}
+
+.pc label{
+    margin: 10px 0px 0px 0px;
+}
+
+.movile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detalles-movile{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+.detalles-movile div{
+    display: flex;
+    flex-direction: column;
+}
+
+.detalles-movile div label{
+    margin: 10px 0px 0px 0px;
+}
+
+.tablet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detalles-tablet{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+.detalles-tablet div{
+    display: flex;
+    flex-direction: column;
+}
+
+.detalles-tablet div label{
+    margin: 10px 0px 0px 0px;
+}
+
+
+/* ##### Categoria*/
+
+.section-categoria{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.home{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-decoration: underline;
+}
+.home:hover{
+    cursor: pointer;
+}
+.home img{
+    width: 13px;
+}
+.home button{
+    border: none;
+    background-color: transparent;
+}
+.home button:hover{
+    cursor: pointer;
+}
+.container-action{
+    display: flex;
+    gap: 30px;
+}
+
+.container-action>div{
+    justify-content: space-around;
+}
+.agregar-categoria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editar-categoria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eliminar-categoia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

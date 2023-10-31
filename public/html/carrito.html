@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main-carrito.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main onload="init()">
+        <section id="section-productos">
+            <div class="titulo">
+                <h3>Carrito</h3>
+            </div>
+            <hr>
+            <div class="producto">
+                <div class="img-producto">
+                    <img src="../img/1.png" alt="">
+                </div>
+                <div class="info-producto">
+                    <span>Nombre Del producto</span>
+                    <span class="price">200</span>
+
+                    <div class="cantidad-producto">
+                        <button class="less-amount">-</button>
+                        <span>0</span>
+                        <button class="more-amount">+</button>
+                    </div>
+                </div>
+                <div class="div-totalProduct">
+                    <span>Total Producto</span>
+                    <span class="total-product">0</span>
+                </div>
+            </div>
+            <hr>
+            <div class="producto">
+                <div class="img-producto">
+                    <img src="../img/1.png" alt="">
+                </div>
+                <div class="info-producto">
+                    <span>Nombre Del producto</span>
+                    <span class="price">500</span>
+
+                    <div class="cantidad-producto">
+                        <button class="less-amount">-</button>
+                        <span>0</span>
+                        <button class="more-amount">+</button>
+                    </div>
+                </div>
+                <div class="div-totalProduct">
+                    <span>Total Producto</span>
+                    <span class="total-product">0</span>
+                </div>
+            </div>
+        </section>
+        <section id="section-pagar">
+
+            <div class="pagar">
+                <div class="amount">
+                    <span>Sub Total</span>
+                    <span class="total-pay">1000</span>
+                </div>
+                <div class="pago">
+                    <label>Metodos de Pago</label>
+                    <div class="diff-metodos">
+                        <div>
+                            <img data-metodo="visa" src="../img/visa.png" alt="">
+                        </div>
+                        <div class="divImg-paypal">
+                            <img data-metodo="paypal" src="../img/paypal.png" alt="">
+                        </div>
+                        <div class="divImg-bancolombia" >
+                            <img data-metodo="bancolombia" src="../img/logo-Bancolombia.png" alt="">
+                        </div>
+                        <div >
+                            <img data-metodo="nequi" src="../img/nequi-logo.png" alt="">
+                        </div>
+                    </div>
+                    <button class="proce-pay">Procesar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../js/carrito.js"></script>
+</body>
+
+</html>

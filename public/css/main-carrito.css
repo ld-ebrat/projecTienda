@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100vw;
+    background-color: #e2e2e2;
+}
+main{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main > *{
+    font-size: 20px;
+    background-color: white;
+}
+
+#section-productos{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0px;
+}
+.titulo{
+    width: 95%;
+}
+#section-productos hr{
+    width: 95%;
+}
+.producto{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    gap: 20px;
+    padding: 0px 0px 0px 20px;
+}
+
+.producto img{
+    width: 300px;
+}
+
+.info-producto{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.div-totalProduct{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+}
+
+.cantidad-producto{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.cantidad-producto button{
+    background-color: rgb(212, 38, 38);
+    color: white;
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+}
+
+#section-pagar{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    padding: 20px;
+}
+.pagar{
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+}
+.pagar >div{
+    width: 100%;
+}
+
+.amount{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pago{
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.diff-metodos{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.diff-metodos img{
+    width: 60px;
+}
+.divImg-bancolombia img{
+    width: 80px;
+}
+.pago button{
+    background-color: rgb(212, 38, 38);
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: rgb(212, 38, 38);
+    color: white;
+    width: 100px;
+    height: 35px;
+}

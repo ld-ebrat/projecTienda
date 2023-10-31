@@ -1,0 +1,198 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: sans-serif;
+    overflow-y: hidden;
+}
+
+main {
+    background-color: rgb(212, 38, 38);
+    height: 100vh;
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 50px 0px 0px;
+}
+
+#phrase {
+    color: white;
+    width: 600px;
+    font-size: 50px;
+}
+
+
+#ls {
+    border-radius: 10px;
+    height: 90%;
+    width: 500px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.log img{
+    width: 150px;
+}
+.log:hover{
+    cursor: pointer;
+}
+
+/*################# Aspectos Generales ##############*/
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-ls {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.div-ls:hover{
+    cursor: text;
+}
+.div-ls {
+    background-color: transparent;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-content: center;
+    position: relative;
+    border: 1px solid black;
+    transition: transform 1s;
+    z-index: 1;
+    gap: 10px;
+}
+
+.div-ls:focus-within label {
+    transform: scale(.9) translateY(-10px);
+}
+
+.div-ls label {
+    position: absolute;
+    display: flex;
+    z-index: 0;
+    top: 10px;
+    transition: transform 0.1s;
+}
+.div-ls label:hover{
+    cursor: text;
+}
+
+.div-ls label span {
+    padding: 0px 10px 0px;
+}
+
+.div-ls input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 20px 10px 0px;
+}
+
+.info-ls button {
+    background-color: rgb(212, 38, 38);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgb(212, 38, 38);
+}
+
+/*################# Aspectos Generales ##############*/
+/*################# localizacion ##################### */
+
+#location {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.selects-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgs-sex{
+    display: flex;
+    gap: 30px;
+}
+.imgs-sex > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.imgs-sex > div > div{
+    display: flex;
+    gap: 5px;
+}
+
+.imgs-sex > div > div > div{
+    display: flex;
+    width: 45px;
+    height: 45px;
+    border-radius: 75%;
+}
+
+.imgs-sex img{
+    width: 45px;
+}
+
+.imgs-sex img:hover{
+    cursor: pointer;
+}
+
+/*################ Localizacion #############*/
+/*###### Boton cambio de opcion [Login o Sing Up] #####*/
+.new-sign-up button{
+    font-size: 17px;
+    border: none;
+    background-color: transparent;
+    text-decoration-line: underline;
+    color: blue;
+    font-weight: 700;
+}
+
+.new-sign-up button:hover{
+    cursor: pointer;
+}
+
+.new-login button{
+    font-size: 17px;
+    border: none;
+    background-color: transparent;
+    text-decoration-line: underline;
+    color: blue;
+    font-weight: 700;
+}
+
+.new-login button:hover{
+    cursor: pointer;
+}
+/*###### Boton cambio de opcion [Login o Sing Up] #####*/
+/*############## Sign Upt ##########*/
+#sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#SignUp{
+    cursor: text;
+}
