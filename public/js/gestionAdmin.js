@@ -21,6 +21,7 @@ usuarios.addEventListener("click", async (e) => {
 
         if (delUser) {
             alert("Usuario Eliminado Correctamente")
+            window.location.href = "/html/gestionAdmin.html"
         }
     }
 })
@@ -34,6 +35,9 @@ pedido.addEventListener("click", async (e) => {
         console.log(pedido)
         const upPedido = await putPedido(pedido._id,pedido.total,pedido.payment_method,"En Camino")
         
+        if(upPedido){
+            window.location.href = "/html/gestionAdmin.html"
+        }
     }
     console.log(e.target)
 })
