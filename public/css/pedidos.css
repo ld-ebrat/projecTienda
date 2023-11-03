@@ -1,0 +1,38 @@
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section{
+    width: 100%;
+}
+#section-opciones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    
+}
+.opciones{
+    display: flex;
+    gap: 20px
+    ;
+}
+.opciones *{
+    border: none;
+    background-color: transparent;
+}
+
+.opciones *:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+table{
+    border-collapse: collapse;
+    border: 1px solid black
+}
+th, td{
+    border: 1px solid black;
+    padding: 5px 25px;
+}

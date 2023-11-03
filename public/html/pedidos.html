@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pedidos.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <button id="home">Home</button>
+        </section>
+        <section id="section-opciones">
+            <div class="opciones">
+                <button class="pending">Pendientes</button>
+                <button class="acept">Aceptados</button>
+                <button class="on-path">En camino</button>
+                <button class="canceled">Cancelados</button>
+                <button class="confirmed">Confirmados</button>
+            </div>
+            <div>
+                <table id="Pedidos">
+                    <tr>
+                        <th>ID Pedido</th>
+                        <th>Fecha</th>
+                        <th>Metodo de Pago</th>
+                        <th>Total</th>
+                        <th>Ver Productos</th>
+                        <th>Estado</th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table id="Productos">
+                    <tr>
+                        <th>ID Pedido</th>
+                        <th>Nombre Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total Producto</th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="../js/pedidos.js"></script>
+</body>
+
+</html>

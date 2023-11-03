@@ -5,11 +5,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main-carrito.css">
+    <link rel="stylesheet" href="../css/header-index.css">
     <title>Document</title>
 </head>
 
 <body>
-    <main onload="init()">
+    <header class="header-carrito">
+        <nav>
+            <div class="div-opa"></div>
+            <div id="nav1">
+                <div class="container1-nav1">
+                    <button class="log"><img src="../img/Logo-1.png" alt=""></button>
+                    <button class="close"><img src="../img/x-24.png" alt=""></button>
+                </div>
+                <hr>
+                <div class="sign">
+                    <button id="signIn">Ingresar</button>
+                    <button id="signUp">Registro</button>
+                </div>
+                <hr>
+                <div class="container2-nav1">
+                    <h4>Categorias</h4>
+                    <div class="container2-cate">
+                        <a href=""><span>Tecnologia</span> <span><img src="../img/mayor-que-24.png" alt=""></span> </a>
+                        <a href=""><span>Deporte</span> <span><img src="../img/mayor-que-24.png" alt=""></span> </a>
+                        <a href=""><span>Electrodomesticos</span> <span><img src="../img/mayor-que-24.png"
+                                    alt=""></span> </a>
+                        <a href=""><span>Bebes</span> <span><img src="../img/mayor-que-24.png" alt=""></span> </a>
+                        <a href=""><span>Ropa de Hombres</span> <span><img src="../img/mayor-que-24.png" alt=""></span>
+                        </a>
+                        <a href=""><span>Ropa de Mujer</span> <span><img src="../img/mayor-que-24.png" alt=""></span>
+                        </a>
+                        <a href=""><span>Mascotas</span> <span><img src="../img/mayor-que-24.png" alt=""></span></a>
+                        <a href=""><span>Video Juegos</span> <span><img src="../img/mayor-que-24.png" alt=""></span></a>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+            <div id="nav2">
+                <div class="container-nav2-1">
+                    <button class="btn-menu"><img src="../img/menu-24.png" alt=""></button>
+                    <button class="log-char"><img src="../img/Logo-2.png" alt=""></button>
+                </div>
+                <div class="container-nav2-2">
+                    <div class="signIn-nav2">
+                        <span>Ingresar</span>
+                    </div>
+                    <div>
+                        <button class="carrito">
+                            <img src="../img/carr-com48.png" alt="">
+                            <p>0</p>
+                        </button>
+                    </div>
+                    <div class="user">
+                        <button>
+                            <img src="../img/man-1.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="nav3">
+                <div class="info-user">
+                    <div class="img-usuario-nav3">
+                        <img src="../img/man-1.png" alt="">
+                        <span>Nombre</span>
+                    </div>
+                    <div class="close-w-user">
+                        <span><img src="../img/x-24.png" alt=""></span>
+                    </div>
+                </div>
+                <hr>
+                <div class="container1-nav3-profile container-nav3">
+                    <button class="profile"> 
+                        <img src="../img/log-user.png" alt="">
+                        Perfil
+                    </button>
+                </div>
+                <hr>
+                <div class="container2-nav3-buy container-nav3">
+                    <button class="consult"><img src="../img/pending-buy-white.png" alt="">Pedidos</button>
+                </div>
+                <hr>
+                <div class="container3-nav3-others container-nav3">
+                    <button class="config"> <img src="../img/sett-white.png" alt="">Configuracion</button>
+                    <button class="exit"><img src="../img/exit-white.png" alt="">Cerrar Seccion</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
         <section id="section-productos">
             <div class="titulo">
                 <h3>Carrito</h3>
@@ -83,7 +168,8 @@
             </div>
         </section>
     </main>
-    <script src="../js/carrito.js"></script>
+    <script type="module" src="../js/header.js"></script>
+    <script type="module" src="../js/carrito.js"></script>
 </body>
 
 </html>

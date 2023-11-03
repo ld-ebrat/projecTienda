@@ -284,6 +284,10 @@ nav{
 .container-nav3 img{
     width: 20px;
 }
+
+.container2-nav3-gestion{
+    display: none;
+}
 #nav3 button{
     background-color: transparent;
     border: none;

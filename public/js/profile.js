@@ -1,3 +1,4 @@
+import {getUser} from "./peticiones.js"
 const btnUpd = document.querySelector(".update-info")
 const img = document.querySelector(".divImg img")
 const select = document.querySelector("#select-city")
@@ -55,23 +56,6 @@ btnUpd.addEventListener("click", async ()=>{
 home.addEventListener("click", ()=>{
     window.location.href = "/"
 })
-async function getUser(token) {
-    try {
-        const response = await fetch("/read-infoUser", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                'authorization': token
-            }
-        })
-        if (response.ok) {
-            const data = await response.json()
-            return data
-        }
-    } catch (err) {
-        console.log("Erro al hacer el fetch en geUser prifle -> ", err)
-    }
-}
 async function getCity() {
     try {
         const response = await fetch("/read-city")

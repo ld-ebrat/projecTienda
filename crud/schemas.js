@@ -27,7 +27,7 @@ const Pedidos = new mongoose.Schema({
     payment_method: String,
     state: {
         type:String,
-        enum: ["Confirmado", "Cancelado","En Espera", "En Camino"]
+        enum: ["Confirmado", "Cancelado","En Espera", "En Camino","Aceptado"]
     },
     total: Number
 });

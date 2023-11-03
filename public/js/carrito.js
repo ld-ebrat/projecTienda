@@ -1,37 +1,85 @@
+import {getUser,getPostCar,getPostCarPro,getPostPro,getPostPedido,putCar,putPedido, putCarPro} from "./peticiones.js"
 const divProduct = document.querySelectorAll(".producto")
 const totalPay = document.querySelector(".total-pay")
 const procePay = document.querySelector(".proce-pay")
 const metodo = document.querySelector(".diff-metodos")
+const les = document.querySelectorAll(".less-amount")
+const sectionPro = document.getElementById("section-productos")
 
 let metodoPago;
 let imgSelect;
-divProduct.forEach(pro => {
-    pro.addEventListener("click", (e) => {
-        const priceProduct = pro.querySelector(".price")
-        const spanAmount = pro.querySelector(".cantidad-producto").querySelector("span")
-        const spanTotalPro = pro.querySelector(".div-totalProduct").querySelector(".total-product")
-        if (e.target.classList.contains("less-amount")) {
-            if (Number(spanAmount.innerText) != 0) {
-                spanAmount.innerText = Number(spanAmount.innerText) - 1
-                spanTotalPro.innerText = 0
-                spanTotalPro.innerText = Number(spanAmount.innerText) * Number(priceProduct.innerText)
-            }
-        } else if (e.target.classList.contains("more-amount")) {
-            spanAmount.innerText = Number(spanAmount.innerText) + 1
-            spanTotalPro.innerText = 0
-            spanTotalPro.innerText = Number(spanAmount.innerText) * Number(priceProduct.innerText)
-        }
 
-        if (e.target.classList.contains("less-amount") || e.target.classList.contains("more-amount")) {
-            totalPay.innerText = 0
-            divProduct.forEach(pro2 => {
-                const spanTotalPro2 = pro2.querySelector(".div-totalProduct").querySelector(".total-product")
-                totalPay.innerText = Number(totalPay.innerText) + Number(spanTotalPro2.innerText)
+sectionPro.addEventListener("click", (e)=>{
+    console.log(document.querySelectorAll(".producto"))
+    if(e.target.classList.contains("less-amount")){
+        var spanAmount = e.target.nextElementSibling
+        const price = e.target.closest(".producto").querySelector(".price")
+        const totalProduct = e.target.closest(".producto").querySelector(".total-product")
+        if(Number(spanAmount.innerText) >0){
+            spanAmount.innerText = Number(spanAmount.innerText)-1
+            totalProduct.innerText = Number(totalProduct.innerText)-Number(price.innerText)
+            totalPay.innerText = Number(totalPay.innerText)-Number(price.innerText)
+        }
+        console.log(e.target.nextElementSibling)
+    }else if(e.target.classList.contains("more-amount")){
+        var spanAmount = e.target.previousElementSibling
+        const price = e.target.closest(".producto").querySelector(".price")
+        const totalProduct = e.target.closest(".producto").querySelector(".total-product")
+
+        spanAmount.innerText = Number(spanAmount.innerText)+1
+        totalProduct.innerText = Number(totalProduct.innerText)+Number(price.innerText)
+        totalPay.innerText = Number(totalPay.innerText)+Number(price.innerText)
+    }
+})
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const token = localStorage.getItem("token")
+
+    sectionPro.innerHTML = `
+    <div class="titulo">
+        <h3>Carrito</h3>
+    </div>
+    <hr>
+    `
+
+    if (token) {
+        const dataUser = await getUser(token)
+        const dataCar = await getPostCar(dataUser._id)
+        if (dataCar) {
+            const dataCarPro = await getPostCarPro(dataCar._id)
+            totalPay.innerText = dataCar.id_pedido.total
+            dataCarPro.forEach(async carPro => {
+                const divPro = document.createElement("div")
+                const hr = document.createElement("hr")
+                divPro.className = "producto"
+                const pro = carPro.id_producto
+                divPro.setAttribute("data-id",pro._id)
+                divPro.innerHTML = `
+                <div class="img-producto">
+                    <img src="${pro.imagen}" alt="">
+                </div>
+                <div class="info-producto">
+                    <span>${pro.name}</span>
+                    <span class="price">${pro.price}</span>
+
+                    <div class="cantidad-producto">
+                        <button class="less-amount">-</button>
+                        <span>${carPro.amount}</span>
+                        <button class="more-amount">+</button>
+                    </div>
+                </div>
+                <div class="div-totalProduct">
+                    <span>Total Producto</span>
+                    <span class="total-product">${carPro.amount*pro.price}</span>
+                </div>
+                `
+                sectionPro.appendChild(divPro)
+                sectionPro.appendChild(hr)
             })
         }
+    }
 
-        divProduct.forEach()
-    })
+
 })
 
 metodo.addEventListener("click", (e) => {
@@ -41,113 +89,49 @@ metodo.addEventListener("click", (e) => {
         imgSelect = e.target
         imgSelect.style.border = "1px solid"
         metodoPago = e.target.getAttribute("data-metodo")
-    }else{
+    } else {
         imgSelect = e.target
         imgSelect.style.border = "1px solid"
         metodoPago = e.target.getAttribute("data-metodo")
     }
 })
 
-procePay.addEventListener("click", async () => {
+procePay.addEventListener("click", async ()=>{
     const token = localStorage.getItem("token")
-    const date = new Date().toLocaleString()
     const total = Number(totalPay.innerText)
-    const state = "Confirmado"
-
     if(token){
+        const user = await getUser(token)
+        const car = await getPostCar(user._id)
+        if(car){
+            if(["visa","paypal","bancolombia","nequi",].includes(metodoPago)){
+                const pedido = await putPedido(car.id_pedido._id,total,metodoPago,"Aceptado")
 
-        if(metodoPago != undefined && total != 0){
-            try{
-                const user = await getUser(token)
-    
-                const car = await getCar(user._id)
-    
-                if(car){
-                    const pedido = await putPedido(car.id_pedido,date,metodoPago,state,total)
-                    const carUp = await putCar(car._id)
-    
-                    if(pedido && carUp){
-                        alert("Pedido realizado con exito")
+                const carPro = await getPostCarPro(car._id)
+                const product = Array.from(sectionPro.querySelectorAll(".producto"))
+                carPro.forEach(async carpro =>{
+                    console.log(carpro)
+                    const indice = product.findIndex(pro=>{
+                        return pro.getAttribute("data-id") === carpro.id_producto
+                    })
+                    console.log(indice)
+                    console.log(product[indice].querySelector(".cantidad-producto span").innerText)
+                    const amount = Number(product[indice].querySelector(".cantidad-producto span").innerText)
+                    const carProUp = await putCarPro(carpro._id,amount)
+                })
+
+                if(pedido){
+                    const carUpt = await putCar(car._id)
+                    if(carUpt){
+                        alert("Pago Procesado con existo")
                     }
                 }
-            }catch(err){
-                alert("Error al realizar el pedido")
+            }else{
+                alert("Seleccione un metodo de pago")
             }
         }else{
-            alert("Falta seleccionar metodo de pago o Productos")
+            alert("Añadir Productos")
         }
+    }else{
+        window.location.href ="/html/login.html"
     }
 })
-
-async function getUser(token){
-
-    try{
-        const response = await fetch("/read-infoUser", {
-            method: "GET",
-            headers: {
-                'Content-Type': 'application/json',
-                authorization: token
-            }
-        })
-
-        if(response.ok){
-            const data = await response.json()
-            return data
-        }
-    }catch(err){
-
-    }
-}
-async function getCar(idUser){
-    try{
-        const response = await fetch("/read-car",{
-            method: "POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify({idUser})
-        })
-        if(response.ok){
-            const data = await response.json()
-            return data
-        }
-    }catch(err){
-        console.log("Error en el fetch de getCar carrito -> ", err)
-    }
-}
-async function putCar(idCar){
-    try{
-        const response = await fetch("/update-car", {
-            method: "PUT",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify({idCar})
-        })
-
-        if(response.ok){
-            const data = await response.json()
-            return data
-        }
-    }catch(err){
-        console.log("Error al ahcer el fetch en putCar carrito -> ", err)
-    }
-}
-async function putPedido(idPedido, date, metodo, state, total){
-    try{
-        const response = await fetch("/update-pedido", {
-            method:"PUT",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify({idPedido, date, metodo, state, total})
-        })
-
-        if(response.ok){
-            const data = await response.json()
-            return data
-        }
-    }catch(err){
-        console.log("Error al hacer el fetch putPedido en carrito -> ",err)
-    }
-}
