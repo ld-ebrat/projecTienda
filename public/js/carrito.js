@@ -123,7 +123,7 @@ procePay.addEventListener("click", async ()=>{
                     const carUpt = await putCar(car._id)
                     if(carUpt){
                         alert("Pago Procesado con existo")
-                        window.location.href = "/html/carito.html"
+                        window.location.href = "/html/carrito.html"
                     }
                 }
             }else{
